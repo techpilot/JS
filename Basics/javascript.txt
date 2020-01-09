@@ -1,0 +1,68 @@
+web packet
+web assembly
+memory heap- a place to allocate memory, use memory and release memory
+call stack- where the engine keeps track of your code and its execution
+
+const subtractTwo = (num) => num - 2;
+
+const calculate = () => {
+  const sumTotal = 5 + 4;
+  return subtractTwo(sumTotal);
+}
+
+calculate()
+
+Causes of memory leaks are too many global variables, not removing event listeners, set intervals
+*Javascript is a single threaded language, meaning it runs one instruction at a time(synchronous) using jsengine but with js runtime it's asynchronous
+callback returns the web api results and transfers to the js engine through the event loop
+
+GLOBAL EXECUTION CONTEXT- tells which lexical environment is currently running.
+LEXICAL ENVIRONMENT- where codes are written. e.g, a global lexical environment is where codes saved on the global but a function that is in another function is not in a global environment
+but in that function's environment
+LEXICAL SCOPE(available data and variables where the function was defined)- determines available variables
+DYNAMIC SCOPE- where the function is called
+HOISTING-  moving functions or var to the top of their respective environments during compilation. NB:If the function is wrapped in a bracket or the variable didn't start with 'var', it won't be hoisted
+
+*CONTEXT AND SCOPE
+->SCOPE is function based while CONTEXT is object based
+->Scope means the variable access of a function when invoked, what is in the variable environment while
+->Context cares about "this" KEYWORD, ie  a reference that owns the Object of the executing code
+->Context is determined by how the function is invoked with the KEYWORD value while
+->Scope is the visibility of variables
+
+Properties of functions in JS
+->FUNCTIONS can be asssigned to a variable
+->FUNCTIONS can be passed to another function
+->FUNCTIONS can be passed as values
+
+TIPS
+-> avoid function intialization in a loop, but rather initialize outside then call it inside the loop
+HOF- a function that returns another function
+
+CLOSURES allow a function to access variables from an enclosing scope or env even after it leaves the scope in which it was declared
+
+Every function have a protoype property and references to an object used to attach properties that will be inherited by objects further down
+NB: only functions have prototype.
+NOTE: Built-in Object is a function cos it has the prototype, and that's the base object eg console.log(typeof Object) = function
+
+Benefits of OOP & FP
+clear and understable code, easy to Extend and Maintain, Memory Efficient, DRY
+
+CLASSES
+the reason external func is not added to the constructor is beacause of memory space,
+anytime we call a class, the constructor gets run and it has unique instances passed in
+but external function is always shared by all instances
+
+PROBLEMS WITH INHERITANCE
+=>Tight coupling problem: changing sth in the base class that affects the children classes
+=>Fragile Base Class Problem: breaking of code into parts
+
+HOW JS WORKS
+A js file run in the browser is translated into machine code by js engine like V8 in chrome. The engine consists of memory heap for allocation of memory and call stack for executing the js code. memory leak happens when there an unused variable.
+JavaScript is a single-threaded language means that it has only one call stack which means it does one execution at time.
+
+Synchronous Programming means that an execution happens in order of how the code is written and called. It's good cos is predictable
+Asynchronous is the opposite. The javascript run time env. allows js to perform asynchronous programming via web apis, callback and event loop, also with eventlistener
+StackOverFlow is when the call stack gets overloaded
+
+Recursion is a function that calls itself

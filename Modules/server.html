@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="container">
+    <header>
+        <div class="header">
+            <h1 id="heading">Learning JavaScript</h1>
+
+            <h3 class="sub">With Stephen Intel</h3>
+        </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        var script2 = (function () {
+            $('h1').click(function () {
+                $('h1').hide();
+            })
+        })
+    </script>
+    <script type="module">
+        import fight from './es6Mod.js';
+        console.log(fight('ron', 'Aib'))
+    </script>
+    <script type="module">
+        import { jump } from './es6Mod.js'
+        console.log(jump())
+    </script>
+</body>
+
+</html>
